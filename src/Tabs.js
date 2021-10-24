@@ -8,8 +8,11 @@ import JobCard from './JobCard';
 import About from './About';
 import Hire from './Hire';
 import Filter from './Filter';
+import ReactGA from 'react-ga'
+
 
 export default function BasicTabs({ jobs }) {
+    ReactGA.initialize({ trackingId: process.env.REACT_APP_GA })
     const [value, setValue] = React.useState('1');
 
     const handleChange = (event, newValue) => {
@@ -22,7 +25,10 @@ export default function BasicTabs({ jobs }) {
                 <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
                     <TabList onChange={handleChange} aria-label="lab API tabs example">
                         <Tab label="我要找工作" value="1" />
-                        <Tab label="我要招人" value="2" />
+                        <Tab label="我要招人" value="2" onClick={() => ReactGA.event({
+                            category: `Click`,
+                            action: `Hire Tab Clicked`,
+                        })} />
                         <Tab label="关于" value="3" />
                     </TabList>
                 </Box>
