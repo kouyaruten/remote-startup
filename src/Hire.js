@@ -10,7 +10,8 @@ function Hire() {
             <Typography variant="h6" fontWeight="700" mt="20px"  >如何招人？<br /></Typography>
             <Typography variant="p"  >
                 - 目前，为了保证remote and startup上面的信息质量，每条招聘信息我都会人工审核其真实性。<br /></Typography>
-            <Typography variant="p"  > 如希望合作，可以发送相关JD至williamjinq@outlook.com, 审核通过后会出现在网站上。<br /></Typography>
+            <Typography variant="p"  > 如希望合作，可以<a target='_blank' href='https://wj.qq.com/s2/9211078/306e/' style={{ color: '#3875cb' }}>填写问卷</a>, 审核通过后会出现在网站上。<br /></Typography>
+
         </div>
     )
 }

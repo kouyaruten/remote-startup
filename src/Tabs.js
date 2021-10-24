@@ -7,6 +7,7 @@ import TabPanel from '@mui/lab/TabPanel';
 import JobCard from './JobCard';
 import About from './About';
 import Hire from './Hire';
+import Filter from './Filter';
 
 export default function BasicTabs({ jobs }) {
     const [value, setValue] = React.useState('1');
@@ -26,6 +27,7 @@ export default function BasicTabs({ jobs }) {
                     </TabList>
                 </Box>
                 <TabPanel value="1">
+                    {/* <Filter /> */}
                     {
                         jobs &&
                         jobs.map((job, i) => <JobCard job={job.fields} key={job.id} />)

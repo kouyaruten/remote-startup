@@ -6,6 +6,7 @@ import { Typography } from '@mui/material';
 import axios from 'axios'
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import Tabs from './Tabs';
+import ReactGA from 'react-ga'
 
 export function getRandomInt(max) {
   return Math.floor(Math.random() * max);
@@ -13,13 +14,14 @@ export function getRandomInt(max) {
 
 
 export default function App() {
+  ReactGA.initialize({ trackingId: process.env.REACT_APP_GA })
   var Airtable = require('airtable');
   const [jobs, setJobs] = useState([])
   const imageNumber = getRandomInt(10)
   useEffect(() => {
     const getJobs = async () => {
       const res = await axios(`https://api.airtable.com/v0/appyjM9dHDeXhpYsi/Table%201?api_key=${process.env.REACT_APP_API_KEY}`)
-      console.log(res);
+      // console.log(res);
       setJobs(res.data.records)
     };
     getJobs()
