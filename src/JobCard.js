@@ -14,7 +14,7 @@ export default function JobCard({ job }) {
             mode: 'light',
         },
     });
-    // console.log(job);
+    // console.log(job.tags);
     return (
         <ThemeProvider theme={darkTheme}>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: "20px", borderRadius: "12px", border: '1px solid #dddddd', boxShadow: '2px 2px 4px #efeeee' }}>
@@ -51,6 +51,7 @@ export default function JobCard({ job }) {
                     {(job.tags && job.tags.includes("startup")) && <Tag text="🏡 初创" />}
                     {(job.tags && job.tags.includes("parttime")) && <Tag text="👩‍💻 兼职" />}
                     {(job.tags && job.tags.includes("english")) && <Tag text="🇺🇸 英语" />}
+                    {(job.tags && job.tags.includes("chinese")) && <Tag text="🇨🇳 中文" />}
                 </CardContent>
                 <CardContent>
                     <Button variant="contained" href={job.link}>
