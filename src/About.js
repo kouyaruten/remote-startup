@@ -26,6 +26,10 @@ function About() {
             <Typography variant="h6" fontWeight="700" mt="40px" >
                 <b>它是一座连接初创/远程公司与求职者的桥梁。</b></Typography>
 
+            <Typography variant="h6" fontWeight="700" mt="40px"  >数据更新<br /></Typography>
+            <Typography variant="p" >
+                每天都会加一些新的职位发布，一周会进行一次大型更新，敬请期待～<br /></Typography>
+
         </div>
     )
 }

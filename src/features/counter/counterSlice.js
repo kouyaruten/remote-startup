@@ -2,7 +2,7 @@ import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import { fetchCount } from './counterAPI';
 
 const initialState = {
-  value: [],
+  value: JSON.parse(localStorage.getItem("filters")) || [],
   // status: 'idle',
 };
 
@@ -31,16 +31,22 @@ export const counterSlice = createSlice({
       // which detects changes to a "draft state" and produces a brand new
       // immutable state based off those changes
       if (!state.value.includes(action.payload)) state.value.push(action.payload)
+      localStorage.setItem("filters", JSON.stringify(state.value));
+
     },
     cancel: (state, action) => {
       if (state.value.includes(action.payload)) state.value = state.value.filter(text => text !== action.payload)
+      localStorage.setItem("filters", JSON.stringify(state.value));
+
     },
     toggle: (state, action) => {
       if (state.value.includes(action.payload)) state.value = state.value.filter(text => text !== action.payload)
       else state.value.push(action.payload)
+      localStorage.setItem("filters", JSON.stringify(state.value));
     },
     clear: (state) => {
       state.value = []
+      localStorage.setItem("filters", JSON.stringify(state.value));
     }
     // Use the PayloadAction type to declare the contents of `action.payload`
     // incrementByAmount: (state, action) => {

@@ -21,7 +21,7 @@ function Filter() {
     const dispatch = useDispatch();
     console.log(filters);
     return (
-        <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center' }}>
+        <div style={{ display: 'flex', flexWrap: 'wrap', flexDirection: 'row', alignItems: 'center' }}>
             <Typography>
                 筛选：
             </Typography>
