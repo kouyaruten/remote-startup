@@ -1,5 +1,6 @@
 import React from 'react'
 import { Typography } from '@mui/material';
+import Link from '@mui/material/Link';
 
 function About() {
     return (
@@ -24,7 +25,9 @@ function About() {
             <Typography variant="p" >- ...<br /></Typography>
             <Typography variant="p" >remote and startup也是为了解决以上的这些事情而诞生的。<br /></Typography>
             <Typography variant="h6" fontWeight="700" mt="40px" >
-                <b>它是一座连接初创/远程公司与求职者的桥梁。</b></Typography>
+                <b>它是一座连接初创/远程公司与求职者的桥梁。<Link href="https://discord.gg/rGGxkSAjpQ">💬 加入讨论组</Link></b></Typography>
+
+
 
             <Typography variant="h6" fontWeight="700" mt="40px"  >数据更新<br /></Typography>
             <Typography variant="p" >
